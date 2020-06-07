@@ -24,18 +24,18 @@ import (
 var w_title = false
 
 func set_ini_value(sec string, key string, value string) {
-	cfg, err := goconfig.LoadConfigFile("conf/conf.ini")
+	cfg, err := goconfig.LoadConfigFile("conf.ini")
 	if err != nil {
 		panic("错误")
 	}
 	cfg.SetValue(sec, key, value)
-	gerr := goconfig.SaveConfigFile(cfg, "conf/conf.ini")
+	gerr := goconfig.SaveConfigFile(cfg, "conf.ini")
 	if gerr != nil {
 		panic("错误")
 	}
 }
 func get_ini_value(sec string, key string) (r string) {
-	cfg, err := goconfig.LoadConfigFile("conf/conf.ini")
+	cfg, err := goconfig.LoadConfigFile("conf.ini")
 	if err != nil {
 		panic("错误")
 	}
@@ -47,20 +47,20 @@ func get_ini_value(sec string, key string) (r string) {
 }
 
 func set_page(tp int, cp int) {
-	cfg, err := goconfig.LoadConfigFile("conf/conf.ini")
+	cfg, err := goconfig.LoadConfigFile("conf.ini")
 	if err != nil {
 		panic("错误")
 	}
 	cfg.SetValue("progress", "totoalpage", strconv.Itoa(tp))
 	cfg.SetValue("progress", "currentpage", strconv.Itoa(tp))
-	gerr := goconfig.SaveConfigFile(cfg, "conf/conf.ini")
+	gerr := goconfig.SaveConfigFile(cfg, "conf.ini")
 	if gerr != nil {
 		panic("错误")
 	}
 }
 
 func get_doc() (doc *goquery.Document, sec map[string]string) {
-	cfg, err := goconfig.LoadConfigFile("conf/conf.ini")
+	cfg, err := goconfig.LoadConfigFile("conf.ini")
 	if err != nil {
 		panic("错误")
 	}
